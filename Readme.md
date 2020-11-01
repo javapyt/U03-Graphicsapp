@@ -1,6 +1,6 @@
 ---
 title: Template
-author: Zuletzt bearbeitet von Alexander Bazo
+author: Zuletzt bearbeitet von Daniel Kwoska
 documentclass: scrartcl
 classoption:
   - a4paper
@@ -17,46 +17,79 @@ header-includes: |
     \fancypagestyle{plain}{
       \fancyhf{}
       \rhead{OOP WS 2020/21}
-      \lhead{U03 | Template}
+      \lhead{U00 | Template}
       \cfoot[C]{\includegraphics[height=2cm]{docs/footer.png}}}
 ---
 
 
-# Template für Übungsaufgaben 
+
+# Übungsblatt 3
 
 ## Wichtige Informationen zur Bearbeitung der Aufgabe 
- - [Link zu wichtiger Ressource](https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/)
+ - [Informationen zur Entwicklungsumgebung *IntelliJ IDEA*](https://regensburger-forscher.de/oop/tutorials/Entwicklungsumgebung)
+ - [Informationen zum Im- und Export von Projekten](https://regensburger-forscher.de/oop/tutorials/Starterprojekte)
 
 ## Starterpaket
 
-Ein vorbereitetes Starterpaket zur selbständigen Implementierung der Aufgabe finden Sie [hier](https://github.com/OOP-Ubungen-WS2020-21/U03-Graphicsapp/archive/Starterpaket.zip).
+Ein vorbereitetes Starterpaket zur selbständigen Implementierung der Aufgabe finden Sie [hier](https://github.com/OOP-Regensburg/GraphicsApp-Exercise-03/archive/Starterpaket.zip).
 
-## Text
+## **Hello GraphicsApp**
 
----
-author:	Alexander Bazo
----
+In dieser Aufgabe können Sie erste Erfahrungen mit der GraphicsApp sammeln. Zeichnen Sie einen überraschten Smiley, wie in der folgenden Abbildung dargestellt.
 
-# Grundlagen zu Variablen und Objekten
+<img src="img/u03-hello-graphicsApp.png" class="center" />
 
-In der dritten Woche werden die grundlegenden Mechanismen zur Verwendung von Variablen eingeführt. Dazu erhalten Sie einen Überblick über die primitiven Datentypen der Programmiersprache Java sowie die Deklaration und Verwendung entsprechender Variablen. Zusätzlich wird das Konzept von Klassen und Objekten eingeführt. In Vorlesung und Übung ersetzen ab dieser Woche graphische, interaktive Anwendungen vom Typ *Graphics App* die bis jetzt verwendetete Bouncer-Umgebung.
+- Ihr Programm startet in der Methode `public void initalize()`. Das Zeichnen des Gesichts soll in der Methode `draw` druchgeführt werden.
 
-## Vorlesung
-In der Vorlesung wird das Prinzip des Speichers, Auslesens und Änderns von Werten und Inhalten durch Variablen erklärt. Sie lernen, (Zwischen-) Ergebnisse von Berechnungen und Programmabläufen abzuspeichern und an anderer Stellen einzusetzten. Aufbauend auf der Einführung primitiver Datentypen wird das Konzept von Klassen und Objekten erläutert. Sie lernen, Objekte auf Basis existierender Klassen zu erzeugen und durch den Aufruf von Methoden zu verwenden. 
+- Zerlegen Sie das Problem in Teilprobleme und erstellen zuerst die Aufrufe für die Methoden `setupCanvas()` und `drawSmiley()` in den vorhandenen Methoden `initalize()` und `draw()`.
 
-In der Vorlesung wird zusätzlich die *Graphics App*-Umgebung eingeführt, die ab jetzt als Grundlagen für die Entwicklung der Beispiele und Übungsaufgaben dient. 
+- Fügen Sie dann die Methoden in der Graphics-App hinzu und setzen Sie in `setupCanvas()` dort die Hintergrundfarbe und die Breite und Höhe der Zeichenflächeauf 500 Pixel.
 
-Die Folien zu dieser Vorlesung finden Sie [hier](https://regensburger-forscher.de/oop-slides/index.html?slides=03-Variablen-und-Objekte).
+- Der Smiley muss zentriert auf der Zeichenfläche dargestellt werden, unabhängig von der Größe des Zeichenfelds! Verwenden Sie geeignete Konstanten (vgl. Beispielcode aus der Vorlesung), um die Breite und Höhe an einer einzigen Stelle in Ihrem Programm zu definieren. Alle anderen Stellen, an denen diese Werte gebraucht werden müssen sich auf diese zentrale Stelle beziehen!
 
-## Lesetexte
+- Die Größe des Smileys können Sie frei wählen.
 
-Die relevanten Lesetexte zu dieser Woche finden Sie aus rechtlichen Gründen im [GRIPS-Kurs](https://elearning.uni-regensburg.de/course/view.php?id=39457#section-0). Lesen Sie bitte das dort verfügbaren Kapitel 3 sowie die aufgeführten Ausschnitte aus dem Kapitel 4 aus *Eric Roberts: The Art & Science of Java*.
+- Nutzen Sie zum Zeichnen des Smiley bzw. den einzelnen Teilen des Gesichts Ellipsen mit unterschiedlicher Größe, Farbe und Position.
 
-## Zentralübung
+## **Zielscheibe**
 
-In der Zentralübung wird die Arbeit mit der *Graphics App*-Umgebung anhand erster, einfacher Beispiele demonstriert.
+In dieser Aufgabe sollen Sie eine Zielscheibe auf dem Bildschirm
+zeichnen:
 
+<img src="img/u03-target.png" class="center" />
 
-## Übung
+Die Zielscheibe muss aus 15 Ellipse-Objekten bestehen und im Zentrum des Bildschirms gezeichnet werden. Der mittlere Ring ist rot und hat einen Durchmesser von 10, die Farben wechseln sich dann nach außen hin ab. Der Durchmesser jedes weiteren Rings entspricht dem seines Vorgängers, erhöht um den Durchmesser des ersten Rings.  Legen Sie für die Anzahl der Ringe und den Durchmesser des innersten Rings geeignete Konstanten an, und testen Sie, ob Ihr Programm auch mit anderen Werten einwandfrei funktioniert. Legen Sie weitere Konstanten an, um Ihren Code robuster gegen Veränderungen zu machen.
 
-In der Übung wenden Sie die vorgestellten Inhalte und Strategien zur Entwicklung erster *Graphics App*-Programme an. Dazu nutzen Sie die bekannten Anweisungen, Bedingungen und Schleifen sowie das neu eingeführte Konzept der Variablen.
+**Tipp:** Die Ringe werden übereinander gezeichnet, d.h. Sie müssen mit dem äußersten Ring anfangen, um zu vermeiden, dass die kleineren Ringe verdeckt werden.
+
+## **Pyramide**
+
+**Klasse im Starterpaket:** `Pyramid`
+
+Ihr Programm soll eine Pyramide zeichnen, die aus einzelnen Ziegeln besteht, die in horizontalen Linien angeordnet werden. Die Anzahl der einzelnen Blöcke nimmt um einen Block pro Reihe ab:
+
+<img src="img/u03-pyramide.png" class="center" />
+
+Die Pyramide soll am unteren Ende der Zeichenfläche stehen und in der Mitte zentriert werden. Verwenden Sie mindestens die folgenden Konstanten:
+
+- `BRICK_WIDTH` für die Breite der Ziegel (30).
+
+- `BRICK_HEIGHT` für die Höhe der Ziegel (12).
+
+- `BRICKS_IN_BASE` für die Anzahl der Ziegel der untersten Reihe (14).
+
+Die angegebenen Zahlen entsprechen der Pyramide auf dem Screenshot, aber Ihre Pyramide muss für unterschiedliche Werte korrekt funktionieren.
+
+**Tipp zur Herangehensweise:** Versuchen Sie zuerst, einen Stapel aus einzelnen Ziegeln zu erzeugen. Modifizieren Sie diesen Code dann, um
+eine Wand zu erzeugen (und denken Sie daran, die *Decomposition*-Methode anzuwenden). Anschließend modifizieren Sie diesen Code, so dass in jeder Reihe ein Ziegel mehr bzw. weniger gesetzt wird (je nachdem, ob Sie die Pyramide von oben oder von unten bauen). Zum Schluss müssen die einzelnen Ziegelreihen noch zentriert werden, d.h. Sie müssen den passenden Startpunkt für jede Reihe berechnen.
+
+## **Expanding Circle**
+
+**Klasse im Starterpaket:** `ExpandingCircle`
+
+Schreiben Sie ein Programm auf der Basis der GraphicsApp, das einen wachsenden Kreis animiert. In der Mitte der Zeichenfläche wird eine Ellipse dargestellt, die mit jedem Aufruf der `draw`-Methode um `1px` in beide Dimensionen wächst. Nutzen Sie zur Animation das Muster, das in
+der Vorlesung im Rahmen des *draw loops* vorgestellt wurde.
+
+Definieren Sie in Ihrem Programm zwei Konstanten für einen initialen (`50px`) sowie einen maximalen Radius (`250px`) für die Ellipse. Sobald der maximale Wert erreicht ist, wird die Ellipse auf die ursprüngliche Größe zurückgesetzt. Die Animation `[initialer Radius -> maximaler Radius]` soll sich endlos wiederholen.
+
+![](img/expandingCircle.gif)
