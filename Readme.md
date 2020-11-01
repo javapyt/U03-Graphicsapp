@@ -28,6 +28,7 @@ header-includes: |
 ## Wichtige Informationen zur Bearbeitung der Aufgabe 
  - [Informationen zur Entwicklungsumgebung *IntelliJ IDEA*](https://regensburger-forscher.de/oop/tutorials/Entwicklungsumgebung)
  - [Informationen zum Im- und Export von Projekten](https://regensburger-forscher.de/oop/tutorials/Starterprojekte)
+ - [GraphicsApp](https://elearning.uni-regensburg.de/mod/url/view.php?id=1482162)
 
 ## Starterpaket
 
